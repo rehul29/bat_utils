@@ -1,6 +1,8 @@
 REM @echo off
 for %%f in (*) do (
-	if "%%~xf" == "" (
+	if "%%~xf" == ".lnk" (
+		del /f "%%~ff"
+	) else if "%%~xf" == "" (
 		mkdir "files"
 		move "%%~ff" "files"
 	) else if NOT "%%~nxf" == "DesktopCleaner.bat" (
